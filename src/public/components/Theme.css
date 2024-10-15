@@ -1,0 +1,24 @@
+.switcher-container {
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem;
+    min-width: 45px;
+}
+
+.switcher-input {
+    display: none;
+}
+
+.switcher-label {
+    cursor: pointer;
+}
+
+.icon-faSun {
+    color: yellow;
+    font-size: 1rem;
+}
+
+.icon-faMoon {
+    color: #003585;
+    font-size: 1rem;
+}

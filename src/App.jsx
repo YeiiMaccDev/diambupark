@@ -1,7 +1,7 @@
 import './App.css';
 import AppRoutes from './Routes';
 
-function App() {
+export const App = () => {
   return (
     <div className="App">
       <AppRoutes />
@@ -9,4 +9,3 @@ function App() {
   );
 }
 
-export default App;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import {PublicLayout} from './public/layout/PublicLayout';
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { PublicLayout } from './public/layout/PublicLayout';
 import { Home } from './public/pages/Home';
 import { AboutUs } from './public/pages/AboutUs';
 import { Login } from './auth/components/Login';
@@ -23,25 +23,23 @@ const PrivateRoute = ({ children }) => {
 
 const AppRoutes = () => {
     return (
-        <Router>
-            <Routes>
-                {/* Rutas Públicas */}
-                <Route element={<PublicLayout />}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<AboutUs />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                </Route>
+        <Routes>
+            {/* Rutas Públicas */}
+            <Route element={<PublicLayout />}>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+            </Route>
 
-                {/* Rutas del Dashboard (privadas) */}
-                <Route element={<PrivateRoute><DashboardLayout /></PrivateRoute>}>
-                    <Route path="/dashboard" element={<Dashboard />} />
-                </Route>
+            {/* Rutas del Dashboard (privadas) */}
+            <Route element={<PrivateRoute><DashboardLayout /></PrivateRoute>}>
+                <Route path="/dashboard" element={<Dashboard />} />
+            </Route>
 
-                {/* Redirigir cualquier ruta no definida */}
-                <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
-        </Router>
+            {/* Redirigir cualquier ruta no definida */}
+            <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
     );
 };
 
